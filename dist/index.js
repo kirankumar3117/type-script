@@ -1,6 +1,18 @@
 "use strict";
-let age = 50;
-if (age > 30) {
-    age += 10;
+let slles = 345524;
+let course = "TYPESCRIPT";
+let is_published = true;
+let level;
+let numbers = [];
+// tuples
+let user = [1, "kiran"];
+user[0].toFixed(0);
+user[1].length;
+user.push(1);
+console.log(user);
+let mysize = 3 /* Size.Large */;
+console.log(mysize);
+function render(doc) {
+    console.log(doc);
 }
 //# sourceMappingURL=index.js.map
