@@ -25,4 +25,11 @@ type UIWidge = Dragable & Resizable;
 let textBox:UIWidge={
     drag:()=>{},
     resize:()=>{}
-}
+};
+
+
+// literals (to limit something)
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
+
+
