@@ -1,19 +1,38 @@
 "use strict";
 class Account {
-    constructor(id, owner, balence) {
+    constructor(id, owner, _balance) {
         this.id = id;
         this.owner = owner;
-        this.balance = balence;
+        this._balance = _balance;
     }
     deposit(amount) {
         if (amount <= 0)
             throw new Error("Invalid amount");
-        this.balance += amount;
+        this._balance += amount;
+    }
+    ;
+    get balance() {
+        return this._balance;
     }
 }
 let account = new Account(1, "Kiran", 0);
 account.deposit(100);
 console.log(account.balance);
-console.log(account);
-console.log(typeof account);
-console.log(account instanceof Account);
+//  Index signature for creating properties dynamically
+class SeatAssignment {
+}
+let seats = new SeatAssignment();
+seats.A1 = "kiran";
+seats.A2 = "kumar";
+// Static member
+class Ride {
+    start() { Ride.activeRides++; }
+    ;
+    stop() { Ride.activeRides--; }
+}
+Ride.activeRides = 0;
+let ride1 = new Ride();
+ride1.start();
+let ride2 = new Ride();
+ride2.start();
+console.log(Ride.activeRides);
