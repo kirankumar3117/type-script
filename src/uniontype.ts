@@ -65,4 +65,15 @@ console.log(customer?.birthday?.getFullYear())
 
 
 
+//  nullish 
+
+let speed:number | null = null;
+
+let ride={
+    // Falsy (undefined, null,"",false,0);
+    //  speed: speed !== null ? speed = 30
+    // Nullish coaliscing operator
+    speed: speed ?? 30
+}
+
 
