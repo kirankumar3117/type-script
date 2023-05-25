@@ -29,4 +29,32 @@ function getCustomer(id) {
 let customer = getCustomer(1);
 // Optional property access operator
 console.log((_a = customer === null || customer === void 0 ? void 0 : customer.birthday) === null || _a === void 0 ? void 0 : _a.getFullYear());
-//# sourceMappingURL=uniontype.js.map
+// Optional element operator (usefull when we are dealing with array)
+//  nullish 
+let speed = null;
+let ride = {
+    // Falsy (undefined, null,"",false,0);
+    //  speed: speed !== null ? speed = 30
+    // Nullish coaliscing operator
+    speed: speed !== null && speed !== void 0 ? speed : 30
+};
+// Type Assertion 
+let phone = document.getElementById("phone");
+// let phone = <HTMLInputElement> document.getElementById("phone");
+// both are valid
+phone.value;
+//  unknown 
+function render(doc) {
+    // Narrowing
+    if (typeof doc === "string") {
+        doc.toLowerCase();
+    }
+}
+// never Type 
+function returnSomething() {
+    while (true) {
+        // Todo
+    }
+}
+returnSomething();
+console.log("helloworld");

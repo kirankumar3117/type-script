@@ -4,4 +4,3 @@ function caluculateTax(income) {
         return income * 1.3;
     return income * 12;
 }
-//# sourceMappingURL=functions.js.map

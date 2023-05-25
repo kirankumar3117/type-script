@@ -12,7 +12,6 @@ user.push(1);
 console.log(user);
 let mysize = 3 /* Size.Large */;
 console.log(mysize);
-function render(doc) {
+function renders(doc) {
     console.log(doc);
 }
-//# sourceMappingURL=index.js.map

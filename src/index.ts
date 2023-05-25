@@ -30,7 +30,7 @@ let mysize: Size=Size.Large;
 console.log(mysize)
 
 
-function render(doc:String){
+function renders(doc:String){
     console.log(doc)
 } 
 

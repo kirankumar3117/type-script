@@ -87,3 +87,23 @@ let phone = document.getElementById("phone") as HTMLInputElement;
 phone.value
 
 
+//  unknown 
+
+function render(doc:unknown){
+    // Narrowing
+    if(typeof doc === "string"){
+        doc.toLowerCase()
+    }
+}
+
+// never Type 
+
+function returnSomething():never{
+    while(true){
+    // Todo
+    }
+}
+
+returnSomething()
+
+console.log("helloworld")

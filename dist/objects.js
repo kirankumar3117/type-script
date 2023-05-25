@@ -6,4 +6,3 @@ let employee = {
         console.log(date);
     }
 };
-//# sourceMappingURL=objects.js.map
