@@ -76,4 +76,14 @@ let ride={
     speed: speed ?? 30
 }
 
+// Type Assertion 
+
+let phone = document.getElementById("phone") as HTMLInputElement;
+
+// let phone = <HTMLInputElement> document.getElementById("phone");
+
+// both are valid
+
+phone.value
+
 
