@@ -84,7 +84,19 @@ class Store<T>{
     add(obj: T):void {
         this._object.push(obj)
     }
+
+    find(property: keyof T, value:unknown): T | undefined {
+        return this._object.find( obj => obj[property] === value);
+    }
 }
+
+let store2 = new Store<Product>();
+
+// keyof operator
+
+store2.find("name",3);
+
+// store2.find("pen",2);  we get compile error
 
 //  passing on the generic type parameter
 
