@@ -6,7 +6,8 @@ class Person{
     }
 
     protected walk(){
-        console.log("walcking !")
+        console.log("walcking !");
+        this.talk()
     }
 
     private talk(){
@@ -76,3 +77,25 @@ class Circle extends Shape{
 
 } 
 
+//  Interface
+
+interface ICalendar{
+    name: string;
+    addEvent():void;
+    removeEvent():void;
+}
+
+interface CloudCalendar extends ICalendar{
+    sync(): void;
+}
+
+class GoogleCalendar implements ICalendar{
+    constructor(public name:string){}
+    addEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+    removeEvent(): void {
+        throw new Error("Method not implemented.");
+    }
+
+}
