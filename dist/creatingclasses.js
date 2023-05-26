@@ -26,11 +26,14 @@ seats.A1 = "kiran";
 seats.A2 = "kumar";
 // Static member
 class Ride {
-    start() { Ride.activeRides++; }
+    start() { Ride._activeRides++; }
     ;
-    stop() { Ride.activeRides--; }
+    stop() { Ride._activeRides--; }
+    static get activeRides() {
+        return Ride._activeRides;
+    }
 }
-Ride.activeRides = 0;
+Ride._activeRides = 0;
 let ride1 = new Ride();
 ride1.start();
 let ride2 = new Ride();

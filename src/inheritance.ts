@@ -5,9 +5,17 @@ class Person{
         return this.firstName + " " + this.lastName;
     }
 
-    walk(){
+    protected walk(){
         console.log("walcking !")
     }
+
+    private talk(){
+        console.log("he is speacks endlish as well :)")
+    }
+
+
+
+
 }
 
 class Student extends Person{
@@ -16,19 +24,36 @@ class Student extends Person{
     }
 
     takeTest() {
-        console.log("Taking a test :)")
+        console.log("Taking a test :)");
+        // this.talk();
+        this.walk();
     }
+
+
 }
 
 let student = new Student(1, "kiran", "kumar");
 
 class Teature extends Person{
     override get fullName(){
-        return "mr/ms" + super.fullName;
+        return "mr/ms" +" "+ super.fullName;
     }
 }
 
-let teature= new Teature("Kiran", "Kumar");
 
-console.log(teature)
+// polymorphism
+
+printNames([
+    new Student(1, "Kiran", "Kumar"),
+    new Teature( "Kiran", "Kumar")
+])
+
+let student3=new Student(1, "kiran", "kumar");
+
+console.log(student3.takeTest())
+
+function printNames(people:Person[]){
+    for(let person of people)
+        console.log(person.fullName)
+}
 
