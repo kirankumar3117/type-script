@@ -119,4 +119,39 @@ class ProductStore extends Store<Product>{
     filterByCategory(category: string): Product[]{
         return []
     }
+};
+
+
+
+
+//  Type Mapping
+
+interface Product01{
+    name: string;
+    price: number
+}
+
+type ReadOnlyProduct={
+    readonly [K in keyof Product01]: Product[K]
+}
+
+let product01: ReadOnlyProduct={
+    name:"pen",
+    price:3
+}
+
+// product01.name=5; compile error
+
+//  adding generic type mapping 
+
+type ReadOnly<T>={
+    readonly [K in keyof T]:T[K]
+}
+
+type Optional<T>={
+    readonly [K in keyof T]?:T[K]
+}
+
+type Nullable<T> = {
+    readonly [K in keyof T]:T[K] | null;
 }
