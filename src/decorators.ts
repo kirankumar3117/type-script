@@ -93,7 +93,7 @@ console.log(person02.fullName)
 //  Property Decorator
 
 function MinLength(length: number){
-    return (target : any, propertyName: string){
+    return (target : any, propertyName: string)=>{
         let value: string;
         const descriptor : PropertyDescriptor = {
             get(){ return value },
@@ -124,3 +124,26 @@ let user01 = new User("kiran");
 user01.password = "4"
 
 console.log(user01.password)
+
+// Parameter Decorator
+
+type WatchParameter = {
+    methodName : string;
+    parameterIndex: number;
+}
+
+const watchedParameters: WatchParameter[] = [];
+
+function Watch(target: any, methodName: string, parameterIndex: number){
+    watchedParameters.push({
+        methodName,
+        parameterIndex
+    })
+}
+
+
+class Vehicle{
+    move(@Watch speed: number){}
+}
+
+console.log(watchedParameters)
