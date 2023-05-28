@@ -66,3 +66,26 @@ class Person01{
 
 let person01= new Person01();
 person01.say('Hello')
+
+
+//  Accessor Decorator
+function Capitalize(target: any, methodName: string, descriptor: PropertyDescriptor){
+    const original = descriptor.get;
+    descriptor.get = function() {
+        const result = original?.call(this);
+        return (typeof result === 'string') ? result.toUpperCase() : result
+    }
+}
+
+class Person02{
+    constructor(public firstName: string, public lastName: string){
+
+    }
+    @Capitalize
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`
+    }
+}
+
+let person02 = new Person02("kiran", "kumar");
+console.log(person02.fullName)
