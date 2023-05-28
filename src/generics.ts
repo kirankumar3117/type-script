@@ -107,7 +107,7 @@ class CompressibleStore<T> extends Store<T>{
 // Restring the generic type parameter
 
 class SearchbleStore<T extends {name : string}> extends Store<T>{
-    find(name : string) : T | undefined{
+     find(name : string) : T | undefined{
         return this._object.find(obj => obj.name === name);
     }
 }
