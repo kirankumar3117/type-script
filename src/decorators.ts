@@ -33,7 +33,13 @@ function Component01(options: ComponentActions){
     }
 }
 
+function Pipe(constructor: Function){
+    console.log("Pipe Decorator Called")
+    constructor.prototype.pipe=true;
+}
+
 @Component01({selector: "#my-profile"})
+@Pipe
 class ProfileComponent01{
 
 }
