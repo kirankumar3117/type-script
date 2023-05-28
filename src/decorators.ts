@@ -89,3 +89,38 @@ class Person02{
 
 let person02 = new Person02("kiran", "kumar");
 console.log(person02.fullName)
+
+//  Property Decorator
+
+function MinLength(length: number){
+    return (target : any, propertyName: string){
+        let value: string;
+        const descriptor : PropertyDescriptor = {
+            get(){ return value },
+            set(newValue: string){
+                if(newValue.length < length){
+                    throw new Error(`${propertyName} should be T least ${length} charector`)
+                }else{
+                    value = newValue
+                }
+            }
+        }
+
+        Object.defineProperty(target, propertyName, descriptor)
+    }
+}
+
+class User{
+    @MinLength(4)
+    password: string
+
+    constructor(password: string){
+        this.password= password
+    }
+}
+
+let user01 = new User("kiran");
+
+user01.password = "4"
+
+console.log(user01.password)
